@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message Empty {}
+
+message Task {
+	string fromp = 1;
+	string to = 2;
+}
+
+message Result {
+	string path = 1;
+	int32 length = 2;
+}
+
+service WikiCrawler {
+	rpc Crawl(Task) returns (stream Result) {}
+}
